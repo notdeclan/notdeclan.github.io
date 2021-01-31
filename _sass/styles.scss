@@ -1,0 +1,165 @@
+@import "normalize";
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+$primary: #2079c7;
+$secondary: #f;
+$accent: #f;
+
+$serif: "Merriweather", serif;
+$sans: "Open Sans", sans-serif;
+
+$mobile: 768px;
+$small: 480px;
+$big: 1600px;
+
+$aboutWidth: 300px;
+
+/* Font Awesome Styling */
+[class^="fa"]:before, [class*="fa"]:before {
+  color: #1f1f1f;
+}
+
+body {
+  font-family: $serif;
+
+  font-size: 16px;
+  line-height: 1.2em;
+  margin: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  margin: 0 100px;
+  display: flex;
+  height: 100%;
+
+  @media screen and (min-width: $big) {
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+  @media screen and (max-width: 1280px) {
+    margin: 0 75px;
+  }
+  @media screen and (max-width: 1024px) {
+    margin: 0 35px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    margin: 0 10px;
+    flex-direction: column;
+  }
+  @media screen and (max-width: $small) {
+    margin: 0;
+  }
+
+  .content {
+    @media screen and (min-width: $mobile + 1) {
+      max-width: calc(100% - #{$aboutWidth});
+      margin-left: $aboutWidth;
+      width: 100%;
+    }
+  }
+
+  .about {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: $aboutWidth;
+    height: 100vh;
+    padding-bottom: 15vh;
+
+    @media screen and (max-width: $mobile) {
+      height: auto;
+      padding: 5vh 30px;
+    }
+    @media screen and (max-width: $small) {
+      padding: 5vh 20px;
+    }
+    @media screen and (min-width: $mobile + 1) {
+      position: fixed;
+      max-width: 280px;
+    }
+
+    /* Logo */
+    img {
+      max-width: 150px;
+    }
+
+    /* Site name */
+    h2 {
+      font-size: 22px;
+      margin-top: 25px;
+      margin-bottom: 0;
+      color: #222222;
+      font-weight: normal;
+
+      a {
+        text-decoration: none;
+        color: $primary;
+      }
+    }
+
+    /* Social Links */
+    .social {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      color: #1f1f1f;
+      a {
+        margin-bottom: .5em;
+      }
+
+      li {
+        i {
+          font-size: 34px;
+        }
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+.post-link {
+  text-decoration: none;
+  color: $primary;
+}
+
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: $sans;
+  font-size: 14px;
+
+  .post-date {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 5px;
+  }
+
+  .post-categories {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      float: left;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      padding: 5px;
+      margin-right: 5px;
+    }
+  }
+}
+

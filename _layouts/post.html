@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="post-container">
+    <a class="post-link" href="{{ page.url | relative_url }}">
+        <h2 class="post-title">
+            {{ page.title }}
+        </h2>
+    </a>
+
+    <div class="post-meta">
+        <div class="post-date">
+            <i class="icon-calender"></i>
+            {{ page.date | date: date_format }}
+        </div>
+        <ul class="post-categories">
+            {%- for category in page.categories -%}
+            <a href="">
+                <li>{{ category }}</li>
+            </a>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="post">
+        {{ content }}
+    </div>
+</div>
