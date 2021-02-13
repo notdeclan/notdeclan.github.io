@@ -1,10 +1,13 @@
 # Site settings
 title:          Declan Woodham
-description:    "Rain is a simple and clean Jekyll theme with focus on content."
+description:    "Personal ramblings, encounters and write ups within Cyber Security, Malware Analysis, and Reverse Engineering"
 url:            https://declan.xyz
 
 # Author
 author:
+  about: >
+    Hi! I am a final year BSc Ethical Hacking student at The University of Abertay, Dundee. Here you can find my personal ramblings, encounters, and writeups within Cyber Security, Exploit Development and Reverse Engineering.
+
   name:         Declan Woodham
   email:        email@declan.xyz
   url:          https://declan.xyz

@@ -1,6 +1,17 @@
 ---
 layout: default
 ---
+<div class="about">
+  <div class="about-image">
+    <img src="{{ "assets/img/me.jpg" | prepend: site.baseurl }}">
+  </div>
+  <div class="about-description">
+    <h2>About</h2>
+    <p>
+      {{ site.author.about }}
+    </p>
+  </div>
+</div>
 
 <div class="catalogue">
   {% for post in paginator.posts %}

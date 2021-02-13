@@ -1,0 +1,25 @@
+.about {
+    border-bottom: 1px solid $grey-2;
+
+    &-title {
+        color: $blue;
+    }
+
+    &-description {
+     height: 200px;
+     display: table-cell;
+     vertical-align: middle;
+ }
+
+  &-image {
+    img {
+        float: right;
+        margin-left: 20px;
+        vertical-align:middle;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        max-width: 100px;
+        border-radius: 50%;
+    }
+  }
+}

@@ -9,6 +9,7 @@
         <a href="{{ site.baseurl }}/">
           <h2 class="nav-title">{{ site.title }}</h2>
         </a>
+
         <ul class="nav-social-icons">
           {% if site.social.email %}
           <li>
@@ -53,7 +54,7 @@
           {% endif %}
           {% if site.social.resume %}
           <li>
-            <a class="dropdown" target="_blank" href="{{ site.social.resume }}">
+            <a class="dropdown" href="{{ site.social.resume }}">
               <i class="fab fas fa-university"></i>
               <div class="dropdown-content">
                 Resume

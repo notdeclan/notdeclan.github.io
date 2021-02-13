@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<h1>Posts tagged: {{page.category}}</h1>
+<div class="catalogue">
+    {% for post in site.posts %}
+        {% unless post.categories contains page.category %}
+            {% continue %}
+        {% endunless %}
+        <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item">
+            <div>
+                <time datetime="{{ post.date }}" class="catalogue-meta">{{ post.date | date: "%B %d, %Y" }}</time>
+                <h1 class="catalogue-title">{{ post.title }}</h1>
+                <p class="catalogue-meta">
+                    {% for category in post.categories %}
+                    {{category}}{% unless forloop.last %}, {% endunless %}
+                    {% endfor %}
+                </p>
+                <div class="catalogue-line"></div>
+                <p class="catalogue-excerpt">
+                    {{ post.content | strip_html | truncatewords: 50 }}
+                </p>
+            </div>
+        </a>
+    {% endfor %}
+</div>
