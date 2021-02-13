@@ -1,15 +1,19 @@
 ---
 layout: default
 ---
-<div style="margin-top: 10px" id="resume"></div>
-
+<style>
+    canvas {
+        display: inline;
+    }
+</style>
+<div style="width: 100%; text-align:center;margin-top: 10px" id="resume"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.7.570/pdf.min.js" type="application/javascript"></script>
 <script>
     const holder = document.getElementById('resume');
     const loadingTask = pdfjsLib.getDocument('assets/resume.pdf');
     loadingTask.promise.then(function(pdf) {
-        for(let pageN = 1; pageN < pdf.numPages; pageN++) {
-            pdf.getPage(pageN).then(function(page) {
+        for(let i = 1; i < pdf.numPages; i++) { // Should be <= but last page is blank anyways
+            pdf.getPage(i).then(function(page) {
                 const scale = 1.5;
                 const viewport = page.getViewport({scale: scale});
 

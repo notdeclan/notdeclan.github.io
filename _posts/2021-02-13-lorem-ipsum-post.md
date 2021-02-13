@@ -7,6 +7,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pulvinar plac
 
 Nullam nulla quam, varius id dictum sit amet, accumsan vel ipsum. Aenean non justo id dui iaculis maximus. Donec eget dui gravida, tristique erat convallis, auctor ligula. Praesent in neque urna. In hac habitasse platea dictumst. Fusce arcu arcu, congue consequat mattis sed, rhoncus eu augue. Vestibulum hendrerit magna vel libero hendrerit, vel ullamcorper massa imperdiet. Aliquam in rhoncus mi. Morbi leo nulla, volutpat vel scelerisque at, semper id quam.
 
+
+## Syntax Highlighting
+```c++
+int main() {
+   std::cout << "big brain" << std::endl;
+}
+```
+
 ## HTML Elements
 Below is just about everything you'll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.
 
@@ -58,3 +66,4 @@ HTML and CSS are our tools. Mauris a ante. Suspendisse quam sem, consequat at, c
 - Item one
 - Item two
 - Item three
+
