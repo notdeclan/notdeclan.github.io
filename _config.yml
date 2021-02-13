@@ -15,7 +15,7 @@ social:
   email: email@declan.xyz
   github: https://github.com/notdeclan
   linkedin: https://www.linkedin.com/in/declanwoodham/
-  resume: https://docs.google.com/document/d/1BR93NNEH3q1DD3WId6VXC4Kt8hS6YplZhWkXe1ZNeTY/
+  resume: /resume
 
 # Build settings
 markdown:       kramdown
