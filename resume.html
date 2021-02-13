@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<div style="margin-top: 10px" id="resume"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.7.570/pdf.min.js" type="application/javascript"></script>
+<script>
+    const holder = document.getElementById('resume');
+    const loadingTask = pdfjsLib.getDocument('assets/resume.pdf');
+    loadingTask.promise.then(function(pdf) {
+        for(let pageN = 1; pageN < pdf.numPages; pageN++) {
+            pdf.getPage(pageN).then(function(page) {
+                const scale = 1.5;
+                const viewport = page.getViewport({scale: scale});
+
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+
+                holder.append(canvas);
+                page.render(renderContext);
+            });
+        }
+    });
+
+</script>

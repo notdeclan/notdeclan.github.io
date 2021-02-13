@@ -1,11 +1,34 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  <title>
+    {% if page.title == "Home" %}
+      {{ site.title }}
+    {% else %}
+      {{ page.title }} &middot; {{ site.title }}
+    {% endif %}
+  </title>
 
-<title>{{ page.title | default: site.title }}</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
-<script src="https://kit.fontawesome.com/6cb9bbbd3d.js" crossorigin="anonymous"></script>
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/img/apple-touch-icon.png" | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/img/favicon-32x32.png" | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/img/favicon-16x16.png" | relative_url }}">
+  <link rel="manifest" href="{{ "/assets/img/site.webmanifest" | relative_url }}">
+  <link rel="mask-icon" href="{{ "/assets/img/safari-pinned-tab.svg" | relative_url }}" color="#2079c9">
+  <link rel="shortcut icon" href="{{ "/assets/img/favicon.ico" | relative_url }}">
+  <meta name="msapplication-TileColor" content="#2079c7">
+  <meta name="msapplication-config" content="{{ "/assets/img/browserconfig.xml" | relative_url }}">
+  <meta name="theme-color" content="#2079c7">
 
-{% seo %}
+
+  <!-- RSS -->
+  {% feed_meta %}
+
+  <!-- SEO -->
+  {% seo %}
+</head>

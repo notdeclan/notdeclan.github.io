@@ -1,45 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    {% include head.html %}
-</head>
-<body>
-    <main class="container">
-        <section class="about">
-            <a href="{{ site.url }}">
-                <img src="{{ '/assets/img/logo.png' | relative_url }}">
+
+  {% include head.html %}
+
+  <body>
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="{{ site.baseurl }}/">
+          <h2 class="nav-title">{{ site.title }}</h2>
+        </a>
+        <ul class="nav-social-icons">
+          {% if site.social.email %}
+          <li>
+            <a class="dropdown" target="_blank" href="mailto:{{ site.social.email }}">
+              <i class="fas fa-envelope"></i>
+              <div class="dropdown-content">
+                Email
+              </div>
             </a>
+          </li>
+          {% endif %}
 
-            <h2 class="title">
-                <a href="{{ site.url }}">{{ site.title }}</a>
-            </h2>
+          {% if site.social.github %}
+          <li>
+            <a class="dropdown" target="_blank" href="{{ site.social.github }}">
+              <i class="fab fa-github"></i>
+              <div class="dropdown-content">
+                Github
+              </div>
+            </a>
+          </li>
+          {% endif %}
+          {% if site.social.twitter %}
+          <li>
+            <a class="dropdown" target="_blank" href="{{ site.social.twitter }}">
+              <i class="fab fa-twitter"></i>
+              <div class="dropdown-content">
+                Twitter
+              </div>
+            </a>
+          </li>
+          {% endif %}
+          {% if site.social.linkedin %}
+          <li>
+            <a class="dropdown" target="_blank" href="{{ site.social.linkedin }}">
+              <i class="fab fa-linkedin-in"></i>
+              <div class="dropdown-content">
+                LinkedIn
+              </div>
+            </a>
+          </li>
+          {% endif %}
+          {% if site.social.resume %}
+          <li>
+            <a class="dropdown" target="_blank" href="{{ site.social.resume }}">
+              <i class="fab fas fa-university"></i>
+              <div class="dropdown-content">
+                Resume
+              </div>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
 
-            <ul class="social">
-                <a href="https://github.com/{{ site.github }}" target="_blank">
-                    <li>
-                        <i class="fab fa-github-square"></i>
-                    </li>
-                </a>
-                <a href="https://linkedin.com/in/{{ site.linkedin }}" target="_blank">
-                    <li>
-                        <i class="fab fa-linkedin"></i>
-                    </li>
-                </a>
-                <a href="mailto:{{ site.email }}" target="_blank">
-                    <li>
-                        <i class="fas fa-envelope-square"></i>
-                    </li>
-                </a>
-            </ul>
-        </section>
-
-        <section class="content">
-            {{ content }}
-        </section>
-
-        <footer>
-            {{ footer }}
-        </footer>
+    <main>
+      {{ content }}
     </main>
-</body>
+
+    <footer>
+      <span>
+        &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> {{ site.author.name }}.
+      </span>
+    </footer>
+  </body>
 </html>
